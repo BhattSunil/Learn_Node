@@ -1,11 +1,23 @@
 import express, { response } from "express";
 const app = express();
-import db from "./db.js"; // 👈 make sure to use .js extension
+import db from "./db.js";
 import person from "./models/person.js";
+
 // const person = require('./models/person.js')
 import bodyParser from "body-parser";
+
+import dotenv from 'dotenv';
+dotenv.config();
+
+
+
 // const bodyParser =require('body-parser')
 app.use(bodyParser.json());
+
+
+const PORT =process.env.PORT || 3000
+
+
 
 app.post("/person", async (req, res) => {
   try {
@@ -38,7 +50,7 @@ app.get("/", (req, res) => {
   res.send("Hello Welcome to the Homepage");
 });
 
-const PORT = 3000;
+
 app.listen(PORT, () => {
   console.log(`Server started at http://localhost:${PORT}`);
 });

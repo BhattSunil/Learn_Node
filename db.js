@@ -1,11 +1,14 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 // ✅ Fixed typo in localhost
 // const mongoURL = 'mongodb://localhost:27017/hotels';
 
 //connection with Atlas
 
-const mongoURL = `mongodb+srv://sunilbhatt:qwerty123@cluster0.mhuw15g.mongodb.net/`
+const mongoURL = process.env.MONGODB_URL
 
 // ✅ Fixed "true" spelling and options
 mongoose.connect(mongoURL, {
@@ -31,4 +34,4 @@ db.on('disconnected', () => {
 });
 
 // ✅ Exporting the db object
-module.exports = db;
+export default db;
