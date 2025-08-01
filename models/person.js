@@ -33,6 +33,15 @@ address:{
 salary:{
   type:Number,
   require:true
+},
+username:{
+  type:String,
+  required:true
+  
+},
+password:{
+  type:String,
+  required:true
 }
 })
 

@@ -4,11 +4,11 @@ dotenv.config();
 
 
 // ✅ Fixed typo in localhost
-// const mongoURL = 'mongodb://localhost:27017/hotels';
+ const mongoURL = 'mongodb://localhost:27017/hotels';
 
 //connection with Atlas
 
-const mongoURL = process.env.MONGODB_URL
+// const mongoURL = process.env.MONGODB_URL
 
 // ✅ Fixed "true" spelling and options
 mongoose.connect(mongoURL, {
